@@ -2,7 +2,7 @@
 
 nop
 nop
-rjmp 4
+rjmp 0
 nop
 nop
 nop
