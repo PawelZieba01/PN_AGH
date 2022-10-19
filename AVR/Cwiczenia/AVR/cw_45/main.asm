@@ -10,7 +10,7 @@
 .equ Segments_P = PORTD
 
 //licznik binarny (modulo1000)
-.def PulseEdgeCtrL = R0
+.def PulseEdgeCtrL = R6
 .def PulseEdgeCtrH = R1
 
 //makro wype³niaj¹ce dwa podane rejestry liczb¹ 16-bitow¹     LOAD_CONST(Rx, Ry, K)
@@ -34,6 +34,13 @@
 	rcall DelayInMs
 .endmacro
 
+
+								.cseg
+								.org	0x00	rjmp _main			//reset
+								.org	OC1Addr	rjmp _timer_isr		//timer1 isr
+
+
+_main:
 								//---- za³adowanie liczb do wyœwietlenia ----
 								ldi R16, 0							//cyfra 0
 								ldi R17, 0							//cyfra 1
@@ -58,7 +65,7 @@
 ;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
 ;										MAIN LOOP											;
 ;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
-MainLoop:						
+_MainLoop:						
 
 
 								//odœwie¿enie wyœwietlacza
@@ -95,7 +102,6 @@ MainLoop:
 		SkipIncCounter:			
 								mov R16, PulseEdgeCtrL				//
 								mov R17, PulseEdgeCtrH				//za³adowanie liczby z licznika binarnego do argumentów podprogramu NumberToDigits
-
 								rcall NumberToDigits				//podprogram przygotowuj¹cy liczby do wyœwietlenia
 								
 								mov Digit_0, R16					//
@@ -105,7 +111,7 @@ MainLoop:
 
 								adiw R25:R24, 1						//inkrementacja licznika pomocniczego
 
-								rjmp MainLoop				
+								rjmp _MainLoop				
 
 ;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
 ;										END MAIN LOOP										;
@@ -113,10 +119,25 @@ MainLoop:
 
 
 
+//-------------------------------------------------------------------------------------------
+//------------------------------------- PRZERWANIA ------------------------------------------								
+//-------------------------------------------------------------------------------------------
+
+_timer_isr:
+								inc R0
+								reti
 
 
 
-//-------------------------------------------------------------------------------------------								
+
+
+
+
+
+//-------------------------------------------------------------------------------------------
+//------------------------------------ PODPROCEDURY -----------------------------------------								
+//-------------------------------------------------------------------------------------------
+
 
 ;*** DelayInMs ***
 ;input : Delay time in ms: R16-17
@@ -140,7 +161,9 @@ DelayInMs:						// --- ochrona rejestrów ---
 								ret		
 								
 
+;------------------------------------------------------------------------------------------------------
 								
+
 ;*** DelayOneMs ***
 ;input : Delay time in ms: R24-25
 ;output: None
@@ -161,6 +184,8 @@ DelayOneMs:						// --- ochrona rejestrów ---
 								// ------------------------------
 								ret
 
+
+;------------------------------------------------------------------------------------------------------
 
 
 ;*** DigitTo7segCode ***
@@ -192,6 +217,8 @@ DigitTo7segCode:
 SegCodesTable:		.db 0b00111111, 0b00000110, 0b11011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01101111
 					//	0			1			2			3			4			5			6			7			8			9
 						
+
+;------------------------------------------------------------------------------------------------------
 
 
 ;*** Divide ***
@@ -247,6 +274,8 @@ Divide:							//XH:XL - dzielna, YH:YL - dzielnik
 								// --------------------------------
 								ret
 
+
+;------------------------------------------------------------------------------------------------------
 
 
 ;*** NumberToDigits ***

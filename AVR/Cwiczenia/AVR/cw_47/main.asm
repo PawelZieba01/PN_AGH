@@ -30,9 +30,32 @@
 	ldi R16, (16>>@0)					 
 	out Digits_P, R16					//w³¹czenie aktualnej cyfry
 
-	LOAD_CONST R17, R16, 10				//opóŸnienie w ms
+	LOAD_CONST R17, R16, 5				//opóŸnienie w ms
 	rcall DelayInMs
 .endmacro
+
+
+								.cseg
+								.org	0x00		rjmp _main			//reset
+								.org	OC1Aaddr	rjmp _timer_isr		//timer1 isr
+
+
+_main:
+								//inicjalizacja timera1: CTC, preskaler: 256, f=1Hz
+								ldi R16, (1<<CS12) | (1<<WGM12)		//
+								out TCCR1B, R16						//preskaler 256 i tryb CTC
+
+								ldi R17, HIGH(31250)				//
+								ldi R16, LOW(31250)					//
+								
+								out OCR1AH, R17						//porównanie CTC 31250
+								out OCR1AL, R16						//
+
+								ldi R16, (1<<OCIE1A)				//
+								out TIMSK, R16						//w³¹czenie przerwania od CTC timera1
+
+								sei									//w³¹czenie globalnych przerwañ
+								
 
 								//---- za³adowanie liczb do wyœwietlenia ----
 								ldi R16, 0							//cyfra 0
@@ -47,18 +70,18 @@
 								//-------------------------------------------
 
 								ldi R16, 0b01111111
-								out Segments_P, R16					//ustawienie pinów jako wyjœcia(PORTD 0-6)
+								out DDRD, R16					//ustawienie pinów jako wyjœcia(PORTD 0-6)
 								ldi R16, 0b00011110
-								out Digits_P, R16					//ustawienie pinów jako wyjœcia(PORTB 1-4)
+								out DDRB, R16					//ustawienie pinów jako wyjœcia(PORTB 1-4)
 
 
-								LOAD_CONST R25, R24, 0				//przygotowanie licznika pomocniczego
+								LOAD_CONST R29, R28, 1			//przygotowanie licznika pomocniczego
 								
 
 ;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
 ;										MAIN LOOP											;
 ;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
-MainLoop:						
+_MainLoop:						
 
 
 								//odœwie¿enie wyœwietlacza
@@ -67,10 +90,35 @@ MainLoop:
 								SET_DIGIT 2
 								SET_DIGIT 3
 
-								LOAD_CONST YYH, YYL, 1			//dzielnik (1000) do licznika modulo1000 R18, R19
+								rjmp _MainLoop				
 
-								mov XXL, R24						//
-								mov XXH, R25						//wartoœæ licznika pomocniczego do podzielenia
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
+;										END MAIN LOOP										;
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
+
+
+
+//-------------------------------------------------------------------------------------------
+//------------------------------------- PRZERWANIA ------------------------------------------								
+//-------------------------------------------------------------------------------------------
+
+_timer_isr:	
+								//cli
+								//--- ochrona rejestrów ---
+								push R21
+								in R21, SREG
+
+								push YYL
+								push YYH
+								push XXL
+								push XXH
+								push R20
+								//-------------------------
+
+								LOAD_CONST YYH, YYL, 1000			//dzielnik (1000) do licznika modulo1000 R18, R19
+
+								mov XXL, R28						//
+								mov XXH, R29						//wartoœæ licznika pomocniczego do podzielenia
 								rcall Divide						//dzielenie l. pom. przez 1000 (wynik reszty w RL(R16), RH(R17))
 
 								ldi R19, 0							//liczba do porównania z reszt¹ z dzielenia
@@ -83,19 +131,18 @@ MainLoop:
 								add PulseEdgeCtrL, R19				//
 								adc PulseEdgeCtrH, R20				//zwiêkszenie licznika binarnego
 
-								//jeœli licznik binarny == 1000  ->  wyczyœæ
-								ldi R19, LOW(10000)					//
-								ldi R20, HIGH(10000)					//liczba do porównania z licznikiem binarnym
-								cp PulseEdgeCtrL, R19				//
-								cpc PulseEdgeCtrH, R20				//porównanie
-								brne SkipIncCounter					//jeœli <1000 to pomiñ wyczyszczenie
+								//jeœli licznik binarny == 10000  ->  wyczyœæ
+								//ldi R19, LOW(10000)					//
+								//ldi R20, HIGH(10000)				//liczba do porównania z licznikiem binarnym
+								//cp PulseEdgeCtrL, R19				//
+								//cpc PulseEdgeCtrH, R20				//porównanie
+								//brne SkipIncCounter					//jeœli <1000 to pomiñ wyczyszczenie
 
-								eor PulseEdgeCtrL, PulseEdgeCtrL	//
-								eor PulseEdgeCtrH, PulseEdgeCtrH	//wyczyszczenie licznika binarnego
+								//eor PulseEdgeCtrL, PulseEdgeCtrL	//
+								//eor PulseEdgeCtrH, PulseEdgeCtrH	//wyczyszczenie licznika binarnego
 		SkipIncCounter:			
 								mov R16, PulseEdgeCtrL				//
 								mov R17, PulseEdgeCtrH				//za³adowanie liczby z licznika binarnego do argumentów podprogramu NumberToDigits
-
 								rcall NumberToDigits				//podprogram przygotowuj¹cy liczby do wyœwietlenia
 								
 								mov Digit_0, R16					//
@@ -103,20 +150,32 @@ MainLoop:
 								mov Digit_2, R18					//
 								mov Digit_3, R19					//zaktualizowanie cyfr do wyœwietlenia
 
-								adiw R25:R24, 1						//inkrementacja licznika pomocniczego
+								adiw R29:R28, 1						//inkrementacja licznika pomocniczego
+								
+								//--- przywrócenie rejestrów ---
+								pop R20
+								pop XXH
+								pop XXL
+								pop YYH
+								pop YYL
 
-								rjmp MainLoop				
-
-;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
-;										END MAIN LOOP										;
-;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *;
-
-
+								out SREG, R21
+								pop R21
+								//------------------------------
+								//sei
+								reti
 
 
 
 
-//-------------------------------------------------------------------------------------------								
+
+
+
+
+//-------------------------------------------------------------------------------------------
+//------------------------------------ PODPROCEDURY -----------------------------------------								
+//-------------------------------------------------------------------------------------------
+
 
 ;*** DelayInMs ***
 ;input : Delay time in ms: R16-17
@@ -140,7 +199,9 @@ DelayInMs:						// --- ochrona rejestrów ---
 								ret		
 								
 
+;------------------------------------------------------------------------------------------------------
 								
+
 ;*** DelayOneMs ***
 ;input : Delay time in ms: R24-25
 ;output: None
@@ -161,6 +222,8 @@ DelayOneMs:						// --- ochrona rejestrów ---
 								// ------------------------------
 								ret
 
+
+;------------------------------------------------------------------------------------------------------
 
 
 ;*** DigitTo7segCode ***
@@ -192,6 +255,8 @@ DigitTo7segCode:
 SegCodesTable:		.db 0b00111111, 0b00000110, 0b11011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01101111
 					//	0			1			2			3			4			5			6			7			8			9
 						
+
+;------------------------------------------------------------------------------------------------------
 
 
 ;*** Divide ***
@@ -228,7 +293,7 @@ Divide:							//XH:XL - dzielna, YH:YL - dzielnik
 		RepeatSub:				cp XXL, YYL				//
 								cpc XXH, YYH			//porównanie dzielnej i dzielnika
 
-								brmi EndDiv				//je¿eli Y>X to zakoñcz dzielenie Y-Y<0
+								brcs EndDiv				//je¿eli Y>X to zakoñcz dzielenie Y-Y<0
 
 								sub XXL, YYL			//
 								sbc XXH, YYH			//odjêcie dzielnika od dzilnej
@@ -247,6 +312,8 @@ Divide:							//XH:XL - dzielna, YH:YL - dzielnik
 								// --------------------------------
 								ret
 
+
+;------------------------------------------------------------------------------------------------------
 
 
 ;*** NumberToDigits ***
