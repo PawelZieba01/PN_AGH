@@ -8,7 +8,7 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
 2. Od ćwiczenia **cw_30b** do **cw_46** jest błąd w inicjalizacji pinów wyświetlacza:   
    Zamiast:
 
-    ```asm
+    ```
     ...
 
     ldi R16, 0b01111111
@@ -20,7 +20,7 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
     ```
     Powinno być:
 
-    ```asm
+    ```
     ...
 
     ldi R16, 0b01111111
@@ -34,7 +34,7 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
 3. Od ćwiczenia **cw_42** do **cw_46** jest błąd w podprocedurze **Divide**:
    Zamiast:
 
-   ```asm
+   ```
     ...
 
     RepeatSub:      cp XL, YL			//
@@ -49,7 +49,7 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
     ```
     Powinno być:
 
-    ```asm
+    ```
     ...
 
     RepeatSub:      cp XXL, YYL			//
