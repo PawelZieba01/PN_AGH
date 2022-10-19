@@ -56,7 +56,7 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
     RepeatSub:      cp XXL, YYL			//
                     cpc XXH, YYH			//porównanie dzielnej i dzielnika
 
-                    **brcs** EndDiv			//jeżeli Y>X to zakończ dzielenie Y-Y<0         <----- TU ZMIANA
+                    brcs EndDiv			//jeżeli Y>X to zakończ dzielenie Y-Y<0         <----- TU ZMIANA
 
                     sub XXL, YYL			//
                     sbc XXH, YYH			//odjęcie dzielnika od dzilnej
