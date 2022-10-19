@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRAssembler</ToolchainName>
+    <ProjectGuid>{45be0989-c5ed-412c-8c27-3835a84e2aa3}</ProjectGuid>
+    <avrdeviceseries>none</avrdeviceseries>
+    <avrdevice>ATtiny2313A</avrdevice>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.obj</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <Language>ASSEMBLY</Language>
+    <AssemblyName>cw_48_f</AssemblyName>
+    <Name>cw_48_f</Name>
+    <RootNamespace>cw_48_f</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <EntryFile>$(MSBuildProjectDirectory)\main.asm</EntryFile>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrAssembler>
+  <avrasm.assembler.general.AdditionalIncludeDirectories>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.10.348\avrasm\inc</Value>
+    </ListValues>
+  </avrasm.assembler.general.AdditionalIncludeDirectories>
+  <avrasm.assembler.general.IncludeFile>tn2313Adef.inc</avrasm.assembler.general.IncludeFile>
+</AvrAssembler>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrAssembler>
+  <avrasm.assembler.general.AdditionalIncludeDirectories>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATtiny_DFP\1.10.348\avrasm\inc</Value>
+    </ListValues>
+  </avrasm.assembler.general.AdditionalIncludeDirectories>
+  <avrasm.assembler.general.IncludeFile>tn2313Adef.inc</avrasm.assembler.general.IncludeFile>
+</AvrAssembler>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="main.asm">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Assembler.targets" />
+</Project>
