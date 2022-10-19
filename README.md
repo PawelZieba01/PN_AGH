@@ -27,6 +27,7 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
 	out DDRD, R16				//ustawienie pinów jako wyjścia(PORTD 0-6)      <----- TU ZMIANA
 	ldi R16, 0b00011110
 	out DDRB, R16				//ustawienie pinów jako wyjścia(PORTB 1-4)      <----- TU ZMIANA
+	
     ...
 
     ```
@@ -59,6 +60,7 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
 
                     sub XXL, YYL			//
                     sbc XXH, YYH			//odjęcie dzielnika od dzilnej
+		    
     ...
     
     ```
