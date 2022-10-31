@@ -4,8 +4,9 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
 
 ## **Uwaga!**
 
-1. Foldery z dopiskiem 'f' np. 'cw_47_f' są projektami testowymi (lepiej się nimi nie sugerować :D)
-2. Od ćwiczenia **cw_30b** do **cw_46** jest błąd w inicjalizacji pinów wyświetlacza:   
+1. W manualu z instrukcjami assemblera do AVR jest błąd: instrukcja ADIW zajmuje 2 cykle procesora (a nie 1)
+2. Foldery z dopiskiem 'f' np. 'cw_47_f' są projektami testowymi (lepiej się nimi nie sugerować :D)
+3. Od ćwiczenia **cw_30b** do **cw_46** jest błąd w inicjalizacji pinów wyświetlacza:   
    Zamiast:
 
     ```
@@ -32,7 +33,7 @@ Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektro
 
     ```
 
-3. Od ćwiczenia **cw_42** do **cw_46** jest błąd w podprocedurze **Divide**:
+4. Od ćwiczenia **cw_42** do **cw_46** jest błąd w podprocedurze **Divide**:
    Zamiast:
 
    ```
