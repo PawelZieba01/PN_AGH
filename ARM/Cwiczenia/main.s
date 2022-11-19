@@ -10,11 +10,27 @@ __use_two_region_memory
 		
 		
 		
-		;---------------- initialise pins (4-7 in port 0) as output -----------------
+		;----------------------------- initialise pins ------------------------------
+		;PORT0: 16-19 as output
 		LDR 	R5, =IODIR0			;load R5 with IODIR0 address
-		LDR 	R6, =2_11110000		;load R6 with pins directions	(binary)
-		STR 	R6, [R5]			;store R6 in addr OF R5 		(set outputs in PORT0)
+		LDR 	R6, =(15<<16)		;load R6 with pins directions
+		STR 	R6, [R5]			;store R6 in addr of R5 		(set outputs in PORT0)
+		
+		;PORT1: 16-23 as output
+		LDR 	R5, =IODIR1			;load R5 with IODIR0 address
+		LDR		R6, =(255<<16)		;load R6 with pins directions
+		STR		R6, [R5]			;store R6 in addr of R5 		(set outputs in PORT1)
 		;----------------------------------------------------------------------------
+		
+		;set '8' on first display 
+		LDR 	R5, =IOSET1			;load R5 with IOSET1 address
+		LDR		R6, =(0x7F<<16)		;load R6 with 7seg '8' code
+		STR		R6, [R5]			;store R6 in addr of R5		(set output pins in PORT1 - segments)
+		
+		;turn on first display
+		LDR		R5, =IOSET0			;load R5 with IOSET0 address
+		LDR 	R6, =(1<<16)		;load R6 with bit corresponding to first digit
+		STR		R6, [R5]			;store R6 in addr of R5		(set output pins in PORT0 - digit)
 		
 		
 		
