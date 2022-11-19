@@ -1,0 +1,26 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATtiny2313"</DEVICE>
+ <WORKING_DIR>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_10\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_10\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc\tn2313def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_10\Debug\cw_10.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>cw_10.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>cw_10.map</FILE>
+  <FILE>cw_10.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+ </LABELS>
+</ASSEMBLER_INFO>

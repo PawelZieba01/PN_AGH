@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/atmelstudio,assembler
-# Edit at https://www.toptal.com/developers/gitignore?templates=atmelstudio,assembler
+# Created by https://www.toptal.com/developers/gitignore/api/keil,assembler
+# Edit at https://www.toptal.com/developers/gitignore?templates=keil,assembler
 
 ### Assembler ###
 *.exe
@@ -7,27 +7,55 @@
 *.obj
 *.bc
 
-### AtmelStudio ###
-## Ignore Atmel Studio temporary files and build results
-# https://www.microchip.com/mplab/avr-support/atmel-studio-7
+### Keil ###
+# something maybe need to add
+# *.bat  # generate batch file
+# output/project_name # uv project generate without file ext
+# *.SRC # generate source file
+# *.src
 
-# Atmel Studio is powered by an older version of Visual Studio,
-# so most of the project and solution files are the same as VS files,
-# only prefixed by an `at`.
-
-#Build Directories
-[Dd]ebug/
-[Rr]elease/
-
-#Build Results
+# Prerequisites
 *.d
-*.eep
-*.elf
-*.hex
+*.dep
+# Object files
+*.OBJ
+
+# Listing Files
+*.COD
+*.cod
+*.[Ii]
+*.LST
+*.lst
+*.MAP
 *.map
-*.srec
+*.[Mm]51
+*.[Mm]66
+*.SCR
+*.scr
 
-#User Specific Files
-*.atsuo
+# LINK output
+*.ABS
 
-# End of https://www.toptal.com/developers/gitignore/api/atmelstudio,assembler
+# Libraries
+*.lib
+*.LIB
+
+
+# uv output
+*.lnp
+*.build_log.htm
+*.HEX
+*.hex
+
+
+# Build Files
+*._IA
+*.__[Ii]
+*._[Ii][Ii]
+
+# project
+*.uvgui.*
+*.uvguix.*
+
+
+# End of https://www.toptal.com/developers/gitignore/api/keil,assembler

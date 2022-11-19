@@ -1,0 +1,41 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATtiny2313A"</DEVICE>
+ <WORKING_DIR>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc\tn2313Adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\Debug\cw_49.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>cw_49.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>cw_49.map</FILE>
+  <FILE>cw_49.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <_main><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>44</LINE></_main>
+  <_timer_isr><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>122</LINE></_timer_isr>
+  <_pcint0_isr><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>165</LINE></_pcint0_isr>
+  <_MainLoop><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>96</LINE></_MainLoop>
+  <DigitTo7segCode><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>269</LINE></DigitTo7segCode>
+  <DelayInMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>220</LINE></DelayInMs>
+  <NumberToDigits><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>366</LINE></NumberToDigits>
+  <Divide><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>319</LINE></Divide>
+  <SkipIncCounter><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>195</LINE></SkipIncCounter>
+  <CallDelayOneMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>227</LINE></CallDelayOneMs>
+  <DelayOneMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>245</LINE></DelayOneMs>
+  <CountDown><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>252</LINE></CountDown>
+  <SegCodesTable><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>291</LINE></SegCodesTable>
+  <RepeatSub><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>329</LINE></RepeatSub>
+  <EndDiv><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_49\main.asm</FILE><LINE>339</LINE></EndDiv>
+ </LABELS>
+</ASSEMBLER_INFO>

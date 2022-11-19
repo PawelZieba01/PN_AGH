@@ -1,0 +1,41 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATtiny2313A"</DEVICE>
+ <WORKING_DIR>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc\tn2313Adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\Debug\Kolokwium_avr.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Kolokwium_avr.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Kolokwium_avr.map</FILE>
+  <FILE>Kolokwium_avr.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <_main><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>105</LINE></_main>
+  <_Timer_ISR><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>74</LINE></_Timer_ISR>
+  <_ExtInt_ISR><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>51</LINE></_ExtInt_ISR>
+  <Skip><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>66</LINE></Skip>
+  <_NumberToDigits><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>155</LINE></_NumberToDigits>
+  <MainLoop><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>134</LINE></MainLoop>
+  <DigitTo7segCode><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>246</LINE></DigitTo7segCode>
+  <DealyInMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>267</LINE></DealyInMs>
+  <_Divide><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>216</LINE></_Divide>
+  <Div><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>221</LINE></Div>
+  <SkipDiv><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>230</LINE></SkipDiv>
+  <Table><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>244</LINE></Table>
+  <L2><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>274</LINE></L2>
+  <OneMsLoop><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>284</LINE></OneMsLoop>
+  <L1><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\Kolokwium_avr\Kolokwium_avr\Kolokwium_avr\main.asm</FILE><LINE>290</LINE></L1>
+ </LABELS>
+</ASSEMBLER_INFO>

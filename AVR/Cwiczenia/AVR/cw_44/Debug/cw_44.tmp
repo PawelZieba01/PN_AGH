@@ -1,0 +1,38 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATtiny2313"</DEVICE>
+ <WORKING_DIR>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc\tn2313def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\Debug\cw_44.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>cw_44.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>cw_44.map</FILE>
+  <FILE>cw_44.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MainLoop><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>61</LINE></MainLoop>
+  <DigitTo7segCode><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>170</LINE></DigitTo7segCode>
+  <DelayInMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>125</LINE></DelayInMs>
+  <Divide><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>218</LINE></Divide>
+  <SkipIncCounter><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>95</LINE></SkipIncCounter>
+  <NumberToDigits><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>263</LINE></NumberToDigits>
+  <CallDelayOneMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>132</LINE></CallDelayOneMs>
+  <DelayOneMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>148</LINE></DelayOneMs>
+  <CountDown><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>155</LINE></CountDown>
+  <SegCodesTable><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>192</LINE></SegCodesTable>
+  <RepeatSub><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>228</LINE></RepeatSub>
+  <EndDiv><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_44\main.asm</FILE><LINE>238</LINE></EndDiv>
+ </LABELS>
+</ASSEMBLER_INFO>

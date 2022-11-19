@@ -1,0 +1,33 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATtiny2313"</DEVICE>
+ <WORKING_DIR>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.10.348\avrasm\inc\tn2313def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\Debug\cw_39b.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>cw_39b.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>cw_39b.map</FILE>
+  <FILE>cw_39b.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MainLoop><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\main.asm</FILE><LINE>55</LINE></MainLoop>
+  <DigitTo7segCode><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\main.asm</FILE><LINE>83</LINE></DigitTo7segCode>
+  <DelayInMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\main.asm</FILE><LINE>64</LINE></DelayInMs>
+  <CallDelayOneMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\main.asm</FILE><LINE>67</LINE></CallDelayOneMs>
+  <DelayOneMs><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\main.asm</FILE><LINE>75</LINE></DelayOneMs>
+  <CountDown><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\main.asm</FILE><LINE>78</LINE></CountDown>
+  <SegCodesTable><FILE>D:\MojePliki\Git\PN_AGH\AVR\Cwiczenia\AVR\cw_39b\main.asm</FILE><LINE>104</LINE></SegCodesTable>
+ </LABELS>
+</ASSEMBLER_INFO>
