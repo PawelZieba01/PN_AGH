@@ -1,6 +1,12 @@
 # Programowanie Niskopoziomowe MTM semestr III AGH 2022/2023
 
-Repozytorium na potrzeby zajęć z programowania niskopoziomowego - Mikroelektronika w Technice i Medycynie I stopień AGH
+Repozytorium na potrzeby zajęć z programowania niskopoziomowego - AGH Mikroelektronika w Technice i Medycynie - semestr 3
+
+Keil Studio
+Asembler
+ARM
+AVR
+
 
 ## **Uwaga!**
 
